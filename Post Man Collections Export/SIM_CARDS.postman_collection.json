@@ -1,0 +1,98 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SIM_CARDS",
+		"_postman_id": "33fa7fa7-924f-468b-695e-9cf5865c82a0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " http://localhost:8000/sim_cards",
+			"request": {
+				"url": " http://localhost:8000/sim_cards",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "A route to get all sim cards"
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8000/orders/4ac9dd92-e758-43cf-8d2c-b65a5c920f0e",
+			"request": {
+				"url": " http://localhost:8000/orders/ac5a1605b03f9f20c45cf203782a7a32",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"status\":\"Processing\"\n}"
+				},
+				"description": "Updating Order to Proccessing using Order Id\n\nOrder Id: 4ac9dd92-e758-43cf-8d2c-b65a5c920f0e\n\nStatus updade can be Proccessing, Pending or Completed."
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8000/orders",
+			"request": {
+				"url": " http://localhost:8000/orders",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"simdId\":1,\n    \"customerId\":2,\n    \"deliveryAddress\" : {\n        \"address\":\"Caltorn\",\n        \"city\":\"Johannesburg\",\n        \"zipCode\":\"5032\",\n        \"country\":\"South Africa\"\n    }\n    \n}"
+				},
+				"description": "Inserting new order"
+			},
+			"response": []
+		},
+		{
+			"name": " http://localhost:8000/orders?page=2&limit=222",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8000/orders?page=2&limit=222",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orders"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "limit",
+							"value": "222",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Getting orders with some limit and page number"
+			},
+			"response": []
+		}
+	]
+}
